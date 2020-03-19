@@ -1,0 +1,122 @@
+
+{% load static %}
+{% load staticfiles %}<style>
+.button1 {
+  background-color:#002D3a; /* Green */
+  border: none;
+  color:white;
+  padding: 8px 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 0px 0px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+  background-color: #002D3a; 
+  color: white; 
+  border-bottom:1px solid white;
+  border-radius: 12px;
+  width: 80%;
+
+}div.a {
+  text-align: center;
+}
+div.h{text-align: center;
+	font-size: 20px
+
+}
+.button1:hover {
+  background-color: #555555;
+  color: white;
+}
+.fa {
+  padding: 10px;
+  font-size: 30px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 3px;
+  border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+</style>
+{% block footer %}  
+    <footer>
+
+    	<span id='num1'>
+ <div class="container-fluid a" style="background-color:#002D3a ">
+ 	<div class="row">
+ 		 <div class="col-md-3">
+ 		 	<h1 style="font-size:25px">ABOUT US</h1><ul style="list-style-type:none;">
+  <li style="text-align: left;color: white">At Travel Vaidya We create exceptional experiences fully customized for our travellers. Book International & Domestic holidays, Flights, Hotels and many more.</li>
+  </br><li style="text-align: left;color: white">279  First Floor, Sector 1, Vasundhara, 
+Ghaziabad - 201012</li>
+</br>
+  <li style="text-align: left;color: white">+91 9990383938, 9990696688, 9990942229</li>
+</br>
+  <li style="text-align: left;color: white">info@travelvaidya.com</li>
+</ul> </div>
+ 		 <div class="col-md-3">
+ 		 	<h1 style="font-size:25px">INFORMATION</h1><ul style="list-style-type:none;">
+  <li style="text-align: left;r;color: white">Career</li>
+</br>
+  <li style="text-align: left;color: white">About Us</li>
+</br>
+  <li style="text-align: left;color: white">Contact Us</li>
+</br>
+  <li style="text-align: left;color: white">Privacy Policy</li>
+  </br>
+  <li style="text-align: left;color: white">Terms And Condition</li>
+ </br> 
+  <li style="text-align: left;color: white">Customer Satisfaction</li>
+</ul> </div>
+ 		 <div class="col-md-3">
+ 		 	<h1 style="font-size:25px">DESTINATIONS</h1><ul style="list-style-type:none;">
+  {% for i in categories %}<a href="i.get_absolute_url"><li>{{i.name}}</li></a></br>{% endfor%}
+  
+</ul> </div>
+ 		 <div class="col-md-3">
+ 		 	<h1 style="font-size:25px">SUBSCRIBE</h1><ul style="list-style-type:none;">
+ 		 		</br>
+ 		 	</br>
+  <form action="">
+  <input style="background-color:#002D3a" type="text" class="button1" name="firstname" value="EMAIL">
+  <br>
+  <input class="button1" type="submit" value="Submit">
+</form> 
+</ul> </div>
+ 	</div>
+ 	<div class="row" class="container">
+ 		 <div class="col-md-3"></div>
+ 		 <div class="col-md-1" style="align-content:center ;">
+
+ 		 	<div class="col-md-1"><a href="#" class="fa fa-facebook"></a></div></div>
+ 		 	<div class="col-md-1" style="align-content:center ;"><div class="col-md-1"><a href="#" class="fa fa-twitter"></a></div></div>
+ 		 	<div class="col-md-1" style="align-content:center ;">
+
+ 		 	<div class="col-md-1"><a href="#" class="fa fa-facebook"></a></div></div>
+ 		 	<div class="col-md-1" style="align-content:center ;"><div class="col-md-1"><a href="#" class="fa fa-twitter"></a></div></div><div class="col-md-1" style="align-content:center ;">
+
+ 		 	<div class="col-md-1"><a href="#" class="fa fa-facebook"></a></div></div>
+ 		 	<div class="col-md-1" style="align-content:center ;"><div class="col-md-1"><a href="#" class="fa fa-twitter"></a></div></div>
+
+ 		 	
+ 		 	
+ 		 </div>
+ 	</div>
+ 	<div  style="background-color:#002D3a;"class="row">
+ 		<div style="background-color:#002D3a;" class="col-md-3 col-xs-3"></div>
+ 		<div class="col-md-6 col-xs-6">
+ 	<div style="background-color:#002D3a;" ><img align="middle" src="{% static "logo/PAYMENTS.png" %}"></div></div></div></span>
+ 	<div style="background-color:#002D3a;" class="col-md-3 col-xs-3"></div>
+
+ 		
+ 		
+      
+</footer>{% endblock %}

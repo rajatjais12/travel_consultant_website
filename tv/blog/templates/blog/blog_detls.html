@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}tv{% endblock %}</title></head>
+    <body>
+    	
+    {% for i in cntnts1 %}
+   			<a href="{{ i.get_absolute_url }}"> <img src="{{i.image.url}}" style="height: 130px; width: auto"></a>a
+    {% endfor %}
+</body>
+</html>

@@ -1,0 +1,109 @@
+{% extends 'product/base.html' %}
+{% load static %}
+{% block title %}
+    tv
+{% endblock %}
+
+{% block content %}
+<style type="text/css">
+	@keyframes slidy {
+0% { left: 0%; }
+20% { left: 0%; }
+25% { left: -100%; }
+45% { left: -100%; }
+50% { left: -200%; }
+70% { left: -200%; }
+75% { left: -300%; }
+95% { left: -300%; }
+100% { left: -400%; }
+}
+
+body { margin: 0; } 
+div#slider { overflow: hidden; }
+div#slider figure img { width: 20%; float: left; }
+div#slider figure { 
+  position: relative;
+  width: 500%;
+  margin: 0;
+  left: 0;
+  text-align: left;
+  font-size: 0;
+  animation: 30s slidy infinite; 
+}
+div.a {
+  text-align: center;
+}
+</style>
+<style>
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 0px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button4 {
+  background-color: #002d3a;
+  color: white;
+  border: 2px solid #e7e7e7;
+  border-radius: 16px;
+}
+
+.button4:hover {background-color: #e7e7e7
+@media screen and (min-width: 601px) {
+  div.example {
+    font-size: 80px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  div.example {
+    font-size: 30px;
+</style><div>
+<div id="slider">
+  <div >
+<figure>{% for i in festoffer %}
+<a href="{{ i.get_absolute_url_offer }}"><img  src="{% if i.image %}{{i.image.url}} {% endif%}" alt></a>
+{% endfor %}
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div>
+  <div class="col-lg-12 col-xs-12">
+  <div class="container-fluid">
+    <div class="row">
+    {% for i in pricer %}
+    <div class="col-lg-2 col-sm-4 col-xs-4 a example" style="background-color:white ;font-size:1vw;">
+     <a href="{{ i.get_absolute_url_price}}"><button class="button button4"><h6 style="font-family:roboto;">{{i.price_range}}</h6></button></a></div>
+    {% endfor %}
+    </div>
+  </div></div>
+<div class="container-fluid">
+   
+  <div class="row">
+    {% for p in theme %}
+    <div class="col-lg-2 col-sm-4 col-xs-4 a" style="background-color:white;">
+    <a href="{{ p.get_absolute_url_them}}"> <img src="{% if p.image %}{{p.image.url}}{% endif %}" style="width:50%;height: auto; padding-left: 5px; position:center:"></a><br><h style="" ><small>{{p.name}}</small>
+    </div>
+     {% endfor %}
+  </div>
+
+ 
+</div>
+</div>
+{% include 'product/search.html' %}
+    
+{% endblock %}
+
+
+
